@@ -1,36 +1,93 @@
 @import './base.css';
 @import 'tailwindcss' prefix(tw);
+@custom-variant dark (&:where(.dark, .dark *));
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+body {
+  font-family: 'Noto Sans Thai', sans-serif;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+html {
+  --surface-0: #fff;
+  --surface-1: oklch(0.99 0 0);
+  --surface-2: oklch(0.97 0 0);
+  --surface-3: oklch(0% 0 0 / 0.1);
+  --surface-drawer: oklch(0.3 0.0311 276.61);
+
+  --primary: oklch(0.67 0.1651 249.6);
+  --negative: oklch(51% 0.207762 26.7467);
+  --info: oklch(0.56 0.1633 253.27);
+
+  --danger: oklch(66.6% 0.179 58.318);
+  --add: oklch(0.66 0.1291 170.65);
+  --edit: oklch(65% 0.1204 222.17);
+  --public: oklch(0.49 0.0927 226.18);
+  --save: oklch(0.48 0.1517 271.15);
+  --nativetab: oklch(0.86 0.0163 239.14);
+  --activetab: oklch(0.45 0.0343 261.32);
+  --mute: oklch(0.58 0.0039 219.56);
+  --close: oklch(0.74 0.155 21.5);
+  --border: oklch(0% 0 0 / 0.12);
+  --negative-tab: oklch(0.51 0.207762 26.7467/0.15);
+
+  --text-dark: var(--surface-drawer);
+  --text-light: #fff;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+:where(.dark, .body--dark) {
+  --surface-0: #1d1d1d;
+  --surface-1: oklch(20.5% 0 0);
+  --surface-2: oklch(14.5% 0 0);
+  --surface-3: oklch(100% 0.00011 271.152 / 0.1);
+  --surface-drawer: oklch(0.3 0.0311 276.61);
+
+  --primary: oklch(0.67 0.1651 249.6);
+  --negative: oklch(51% 0.207762 26.7467);
+  --info: oklch(0.56 0.1633 253.27);
+
+  --danger: oklch(66.6% 0.179 58.318);
+  --add: oklch(0.66 0.1291 170.65);
+  --edit: oklch(65% 0.1204 222.17);
+  --public: oklch(0.49 0.0927 226.18);
+  --save: oklch(0.48 0.1517 271.15);
+  --nativetab: oklch(0.44 0.0163 239.14);
+  --activetab: oklch(0.45 0.0343 261.32);
+  --mute: oklch(0.58 0.0039 219.56);
+  --close: oklch(0.74 0.155 21.5);
+  --border: oklch(1 0 0 / 28%);
+  --negative-tab: oklch(0.51 0.207762 26.7467/0.15);
+
+  --text-dark: #fff;
+  --text-light: #000;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+.surface-0 {
+  background-color: var(--surface-0) !important;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+.surface-1 {
+  background-color: var(--surface-1) !important;
+}
+
+.surface-2 {
+  background-color: var(--surface-2) !important;
+}
+
+.surface-3 {
+  background-color: var(--surface-3) !important;
+}
+
+.surface-drawer {
+  background-color: var(--surface-drawer) !important;
+}
+
+.text-dark {
+  color: var(--text-dark) !important;
+}
+
+.text-light {
+  color: var(--text-light) !important;
+}
+
+.text-danger {
+  color: var(--danger) !important;
 }

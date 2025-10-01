@@ -1,85 +1,74 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div class="tw:h-screen tw:flex tw:flex-col">
+    <header>
+      <q-toolbar class="tw:flex tw:gap-2 surface-0 text-light text-dark">
+        <div class="tw:font-bold tw:text-2xl">Portfolio</div>
+        <q-space />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+        <q-btn
+          class="tw:transition tw:delay-75 tw:duration-75 tw:hover:scale-110"
+          flat
+          dense
+          size="13px"
+          label="หน้าแรก"
+        />
+        <q-btn
+          class="tw:transition tw:delay-75 tw:duration-75 tw:hover:scale-110"
+          flat
+          dense
+          size="13px"
+          label="เกี่ยวกับ"
+        />
+        <q-btn
+          class="tw:transition tw:delay-75 tw:duration-75 tw:hover:scale-110"
+          flat
+          dense
+          size="13px"
+          label="ผลงาน"
+        />
+        <q-btn
+          class="tw:transition tw:delay-75 tw:duration-75 tw:hover:scale-110"
+          flat
+          dense
+          size="13px"
+          label="ทักษะ"
+        />
+        <q-btn
+          class="tw:transition tw:delay-75 tw:duration-75 tw:hover:scale-110"
+          flat
+          dense
+          size="13px"
+          label="ติดต่อ"
+        />
+        <q-btn
+          class="tw:transition tw:delay-75 tw:duration-75 tw:hover:scale-110"
+          flat
+          dense
+          round
+          size="13px"
+          @click="() => $q.dark.toggle()"
+        >
+          <q-icon name="mdi-theme-light-dark" size="18px" class="tw:opacity-50" />
+        </q-btn>
+      </q-toolbar>
+    </header>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+    <section class="tw:h-full tw:w-full tw:flex-grow tw:overflow-y-auto">
+      <q-card class="tw:h-full no-border-radius surface-2">
+        <router-view />
+      </q-card>
+    </section>
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
+.q-btn {
+  &:hover {
+    color: #fca5a5 !important;
   }
 }
 </style>

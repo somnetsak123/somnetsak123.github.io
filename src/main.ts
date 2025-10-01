@@ -5,7 +5,7 @@ import { createPinia } from 'pinia'
 import { Quasar } from 'quasar'
 
 //Import icon libraries
-import '@quasar/extras/material-icons/material-icons.css'
+import '@quasar/extras/mdi-v7/mdi-v7.css'
 
 import 'quasar/src/css/index.sass'
 
@@ -16,6 +16,7 @@ const app = createApp(App)
 
 app.use(Quasar, {
   plugins: {},
+  config: { dark: 'auto' },
 })
 
 app.use(createPinia())

@@ -16,7 +16,7 @@ export default defineConfig({
     }),
     vueDevTools(),
     quasar({
-      autoImportComponentCase: 'pascal',
+      autoImportComponentCase: 'kebab',
       sassVariables: fileURLToPath(new URL('./src/css/quasar-variables.sass', import.meta.url)),
     }),
     tailwindcss(),
