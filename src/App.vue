@@ -5,7 +5,7 @@ import { RouterView } from 'vue-router'
 <template>
   <div :class="`tw:h-screen tw:flex tw:flex-col ${$q.dark.isActive ? 'dark' : ''}`">
     <header>
-      <q-toolbar class="tw:flex tw:gap-2 surface-0 tw:text-black tw:dark:text-white">
+      <q-toolbar class="q-pa-md tw:flex tw:gap-2 surface-0 tw:text-black tw:dark:text-white">
         <div class="tw:text-2xl">Portfolio</div>
         <q-space />
 
@@ -13,35 +13,35 @@ import { RouterView } from 'vue-router'
           class="tw:transition tw:delay-75 tw:duration-75 tw:hover:scale-110"
           flat
           dense
-          size="13px"
+          size="14px"
           label="หน้าแรก"
         />
         <q-btn
           class="tw:transition tw:delay-75 tw:duration-75 tw:hover:scale-110"
           flat
           dense
-          size="13px"
+          size="14px"
           label="เกี่ยวกับ"
         />
         <q-btn
           class="tw:transition tw:delay-75 tw:duration-75 tw:hover:scale-110"
           flat
           dense
-          size="13px"
+          size="14px"
           label="ผลงาน"
         />
         <q-btn
           class="tw:transition tw:delay-75 tw:duration-75 tw:hover:scale-110"
           flat
           dense
-          size="13px"
+          size="14px"
           label="ทักษะ"
         />
         <q-btn
           class="tw:transition tw:delay-75 tw:duration-75 tw:hover:scale-110"
           flat
           dense
-          size="13px"
+          size="14px"
           label="ติดต่อ"
         />
         <q-btn
@@ -49,7 +49,7 @@ import { RouterView } from 'vue-router'
           flat
           dense
           round
-          size="13px"
+          size="14px"
           @click="() => $q.dark.toggle()"
         >
           <q-icon name="mdi-theme-light-dark" size="18px" class="tw:opacity-50" />
@@ -65,10 +65,10 @@ import { RouterView } from 'vue-router'
   </div>
 </template>
 
-<style scoped>
+<style >
 .q-btn {
   &:hover {
-    color: #fca5a5 !important;
+    color: #c93cd6ff !important;
   }
 }
 </style>
