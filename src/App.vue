@@ -3,10 +3,10 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div class="tw:h-screen tw:flex tw:flex-col">
+  <div :class="`tw:h-screen tw:flex tw:flex-col ${$q.dark.isActive ? 'dark' : ''}`">
     <header>
-      <q-toolbar class="tw:flex tw:gap-2 surface-0 text-light text-dark">
-        <div class="tw:font-bold tw:text-2xl">Portfolio</div>
+      <q-toolbar class="tw:flex tw:gap-2 surface-0 tw:text-black tw:dark:text-white">
+        <div class="tw:text-2xl">Portfolio</div>
         <q-space />
 
         <q-btn
