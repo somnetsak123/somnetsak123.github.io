@@ -2,13 +2,13 @@
 
 <template>
   <q-card-section
-    class="tw:h-10/10 tw:text-black bg-linear-violet tw:grid tw:grid-rows-3 tw:gap-3 tw:justify-items-center tw:items-center"
+    class="tw:h-10/10 tw:text-black bg-linear-violet tw:grid tw:grid-col-3 tw:gap-3 tw:justify-items-center tw:items-center"
   >
-    <q-btn round class="q-pa-sm surface-0">
+    <q-btn  round class="q-pa-sm surface-0 ">
       <q-avatar size="100px"> 👨‍💻 </q-avatar>
     </q-btn>
 
-    <div class="tw:grid tw:justify-items-center">
+    <div class="tw:flex tw:flex-col tw:items-center">
       <h class="tw:text-white tw:text-5xl tw:md:text-6xl tw:font-bold tw:mb-4">สวัสดี ฉันคือ</h>
       <h class="tw:text-3xl tw:md:text-4xl tw:font-light tw:mb-6 tw:text-purple-200">
         นักพัฒนาเว็บไซต์
