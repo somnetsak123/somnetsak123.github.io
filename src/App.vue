@@ -7,8 +7,10 @@ const showMenu = ref<boolean>(false)
 
 <template>
   <div :class="`tw:h-screen tw:flex tw:flex-col ${$q.dark.isActive ? 'dark' : ''}`">
-    <header>
-      <q-toolbar class="q-pa-md tw:flex tw:gap-2 surface-0 tw:text-black tw:dark:text-white">
+    <header class="shadow-lg tw:z-10">
+      <q-toolbar
+        class="q-pa-md tw:flex tw:gap-2 surface-0 tw:text-black tw:dark:text-white tw:z-10"
+      >
         <div class="tw:text-3xl text-weight-bold">Portfolio</div>
         <q-space />
 
@@ -102,5 +104,11 @@ const showMenu = ref<boolean>(false)
   &:hover {
     color: #c93cd6ff !important;
   }
+}
+
+.shadow-lg {
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.3),
+    0 4px 6px -2px rgba(0, 0, 0, 0.1) !important;
 }
 </style>
