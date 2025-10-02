@@ -34,7 +34,7 @@
     class="tw:h-10/10 tw:text-black tw:dark:text-white tw:text-black surface-0 tw:grid tw:gap-3 tw:justify-items-center tw:items-center"
   >
     <h3 class="tw:font-bold q-mt-auto">เกี่ยวกับฉัน</h3>
-    <div :class="`tw:flex tw:flex-col tw:gap-6 `">
+    <div :class="`tw:flex tw:flex-col tw:gap-4 `">
       <div class="tw:grid tw:justify-items-center">
         <q-btn round class="bg-linear-violet">
           <q-avatar size="100px">🎨 </q-avatar>
@@ -50,6 +50,18 @@
           ฉันเชื่อว่าการออกแบบที่ดีต้องมาพร้อมกับฟังก์ชันการทำงานที่เยี่ยม
           และฉันพร้อมที่จะนำความคิดสร้างสรรค์มาผสมผสานกับเทคโนโลยีเพื่อสร้างผลงานที่โดดเด่น
         </p>
+
+        <div class="tw:gap-3">
+          <span
+            class="tw:bg-green-100 tw:text-green-800 q-px-sm tw:rounded-full tw:text-sm tw:font-medium"
+            >Front-End</span
+          >
+
+          <span
+            class="tw:bg-purple-100 tw:text-purple-800 q-px-sm tw:rounded-full tw:text-sm tw:font-medium"
+            >Back-End</span
+          >
+        </div>
       </div>
     </div>
   </q-card-section>
