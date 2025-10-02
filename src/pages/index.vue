@@ -1,8 +1,18 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Card from '@/components/card.vue';
+import Contact from '@/components/contact.vue';
+
+import { ref } from 'vue'
+
+const btnToggle = ref<string>('1')
+
+
+
+</script>
 
 <template>
   <q-card-section
-    class="tw:h-10/10 tw:text-black bg-linear-violet tw:grid tw:grid-col-3 tw:gap-3 tw:justify-items-center tw:items-center"
+    class="tw:h-10/10 tw:text-black bg-linear-violet tw:grid tw:grid-row-3 tw:gap-3 tw:justify-items-center tw:items-center"
   >
     <q-btn  round class="q-pa-sm surface-0 ">
       <q-avatar size="100px"> 👨‍💻 </q-avatar>
@@ -51,7 +61,7 @@
           และฉันพร้อมที่จะนำความคิดสร้างสรรค์มาผสมผสานกับเทคโนโลยีเพื่อสร้างผลงานที่โดดเด่น
         </p>
 
-        <div class="tw:gap-3">
+        <div class=" tw:flex tw:flex-row tw:gap-2">
           <span
             class="tw:bg-green-100 tw:text-green-800 q-px-sm tw:rounded-full tw:text-sm tw:font-medium"
             >Front-End</span
@@ -65,6 +75,40 @@
       </div>
     </div>
   </q-card-section>
+
+
+  <q-card-section 
+    class=" tw:text-black tw:dark:text-white tw:text-black surface-1 tw:grid tw:gap-3 tw:justify-items-center tw:items-center"
+  >
+
+  <div class="text-center">
+<h3 class="tw:font-bold ">ผลงานของฉัน</h3>
+      <div class="q-pa-md">
+    <q-btn-toggle
+    class="surface-0"
+      v-model="btnToggle"
+      rounded
+      toggle-color="accent"
+      size="1rem"
+      :options="[
+        {label: 'ทั้งหมด', value: '1'},
+        {label: 'เว็บไซต์', value: '2'},
+        {label: 'อบรม', value: '3'}
+      ]"
+    />
+  </div>
+  </div>
+
+  <div class="tw:grid tw:md:grid-cols-2  tw:gap-3  text-center">
+ <Card class="" v-for="v in ['1','2','3','4']"/>
+ 
+
+  </div>
+    
+  </q-card-section>
+
+<Contact/>
+
 </template>
 
 <style scoped>
