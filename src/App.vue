@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { RouterView } from 'vue-router'
+
+const showMenu = ref<boolean>(false)
 </script>
 
 <template>
@@ -10,35 +13,70 @@ import { RouterView } from 'vue-router'
         <q-space />
 
         <q-btn
+          v-if="$q.screen.lt.sm"
           class="tw:transition tw:delay-75 tw:duration-75 tw:hover:scale-110"
           flat
           dense
-          label="หน้าแรก"
-        />
-        <q-btn
-          class="tw:transition tw:delay-75 tw:duration-75 tw:hover:scale-110"
-          flat
-          dense
-          label="เกี่ยวกับ"
-        />
-        <q-btn
-          class="tw:transition tw:delay-75 tw:duration-75 tw:hover:scale-110"
-          flat
-          dense
-          label="ผลงาน"
-        />
-        <q-btn
-          class="tw:transition tw:delay-75 tw:duration-75 tw:hover:scale-110"
-          flat
-          dense
-          label="ทักษะ"
-        />
-        <q-btn
-          class="tw:transition tw:delay-75 tw:duration-75 tw:hover:scale-110"
-          flat
-          dense
-          label="ติดต่อ"
-        />
+          icon="mdi-menu"
+          @click="() => (showMenu = true)"
+        >
+          <q-menu>
+            <q-list class="tw:min-w-50 tw:text-black tw:dark:text-white">
+              <q-item clickable v-close-popup>
+                <q-item-section>หน้าแรก</q-item-section>
+              </q-item>
+
+              <q-item clickable v-close-popup>
+                <q-item-section>เกี่ยวกับ</q-item-section>
+              </q-item>
+
+              <q-item clickable v-close-popup>
+                <q-item-section>ผลงาน</q-item-section>
+              </q-item>
+
+              <q-item clickable v-close-popup>
+                <q-item-section>ทักษะ</q-item-section>
+              </q-item>
+
+              <q-item clickable v-close-popup>
+                <q-item-section>ติดต่อ</q-item-section>
+              </q-item>
+            </q-list>
+          </q-menu>
+        </q-btn>
+
+        <div v-else>
+          <q-btn
+            class="tw:transition tw:delay-75 tw:duration-75 tw:hover:scale-110"
+            flat
+            dense
+            label="หน้าแรก"
+          />
+          <q-btn
+            class="tw:transition tw:delay-75 tw:duration-75 tw:hover:scale-110"
+            flat
+            dense
+            label="เกี่ยวกับ"
+          />
+          <q-btn
+            class="tw:transition tw:delay-75 tw:duration-75 tw:hover:scale-110"
+            flat
+            dense
+            label="ผลงาน"
+          />
+          <q-btn
+            class="tw:transition tw:delay-75 tw:duration-75 tw:hover:scale-110"
+            flat
+            dense
+            label="ทักษะ"
+          />
+          <q-btn
+            class="tw:transition tw:delay-75 tw:duration-75 tw:hover:scale-110"
+            flat
+            dense
+            label="ติดต่อ"
+          />
+        </div>
         <q-btn
           class="tw:transition tw:delay-75 tw:duration-75 tw:hover:scale-110"
           flat
