@@ -2,13 +2,12 @@
 
 <template>
   <q-card-section
-    class="tw:h-10/10 tw:text-black bg-linear-violet tw:grid tw:gap-3 tw:justify-items-center tw:items-center"
-  >
+    class="tw:h-10/10 tw:text-black bg-linear-violet tw:grid tw:gap-3 tw:justify-items-center tw:items-center">
     <div class="tw:grid tw:items-center">
       <div class="text-center">
         <h class="tw:text-white tw:text-3xl tw:md:text-6xl tw:font-bold tw:mb-4">ติดต่อฉัน</h>
       </div>
-      <div class="tw:grid tw:grid-cols tw:text-black tw:dark:text-white">
+      <div class="tw:grid tw:grid-cols  tw:text-white">
         <div class="tw:flex tw:flex-col">
           <div>
             <h3 class="tw:text-2xl tw:font-semibold tw:mb-6">มาคุยกันเถอะ!</h3>
@@ -19,19 +18,19 @@
             <div class="tw:grid tw:grid-cols-2 tw:gap-4">
               <div class="tw:flex tw:items-center">
                 <div
-                  class="tw:w-12 tw:h-12 tw:bg-white tw:bg-opacity-20 tw:rounded-full tw:flex tw:items-center tw:justify-center q-mr-md"
-                >
+                  class="tw:min-w-12 tw:w-12 tw:h-12 tw:bg-white tw:bg-opacity-20 tw:rounded-full tw:flex tw:items-center tw:justify-center q-mr-md">
                   📧
                 </div>
                 <div class="tw:grid tw:grid-cols tw:items-center">
                   <div class="tw:font-medium">อีเมล</div>
-                  <div class="tw:text-purple-200">contact@example.com</div>
+
+                  <a href="mailto:somnetsak@gmail.com" class="tw:text-purple-200" target="_blank"> somnetsak@gmail.com
+                  </a>
                 </div>
               </div>
               <div class="tw:flex tw:items-center">
                 <div
-                  class="tw:w-12 tw:h-12 tw:bg-white tw:bg-opacity-20 tw:rounded-full tw:flex tw:items-center tw:justify-center q-mr-md"
-                >
+                  class="tw:min-w-12  tw:w-12 tw:h-12 tw:bg-white tw:bg-opacity-20 tw:rounded-full tw:flex tw:items-center tw:justify-center q-mr-md">
                   🌐
                 </div>
                 <div class="tw:grid tw:grid-cols tw:items-center">
@@ -41,26 +40,15 @@
               </div>
               <div class="tw:flex tw:items-center">
                 <div
-                  class="tw:w-12 tw:h-12 tw:bg-white tw:bg-opacity-20 tw:rounded-full tw:flex tw:items-center tw:justify-center q-mr-md"
-                >
+                  class=" tw:min-w-12  tw:w-12 tw:h-12 tw:bg-white tw:bg-opacity-20 tw:rounded-full tw:flex tw:items-center tw:justify-center q-mr-md">
                   📱
                 </div>
                 <div>
                   <div class="tw:font-tw:medium">โทรศัพท์</div>
-                  <div class="tw:text-purple-200">+66 XX XXX XXXX</div>
+                  <div class="tw:text-purple-200">063 919 5701</div>
                 </div>
               </div>
-              <div class="tw:flex tw:items-center">
-                <div
-                  class="tw:w-12 tw:h-12 tw:bg-white tw:bg-opacity-20 tw:rounded-full tw:flex tw:items-center tw:justify-center q-mr-md"
-                >
-                  📍
-                </div>
-                <div>
-                  <div class="tw:font-medium">ที่อยู่</div>
-                  <div class="tw:text-purple-200">กรุงเทพมหานคร, ประเทศไทย</div>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>

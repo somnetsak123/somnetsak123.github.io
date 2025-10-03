@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 
+const props = defineProps<{
+  image: string[],
+  title: string,
+  content: string,
+  sw: string[]
+}>()
+
+const slide = ref(0)
+
 const gradientPairs = [
   // ☀️ ชุดสีโทนอุ่น/สว่าง (Warm/Bright Tones)
   ['from-yellow-400', 'to-orange-500'], // ส้ม-เหลือง (เดิม)
@@ -49,30 +58,34 @@ const randomGradientClasses = computed(() => {
 </script>
 
 <template>
-  <div class="q-pa-sm">
-    <div
-      class="project-card tw:bg-white tw:rounded-xl tw:shadow-lg tw:overflow-hidden card-hover tw:visible"
-      data-category="web"
-    >
-      <div
-        :class="randomGradientClasses"
-        class="tw:h-48 tw:flex tw:items-center tw:justify-center tw:text-white tw:text-6xl"
-      >
-        📊
-      </div>
-      <div class="tw:p-6 tex">
-        <h3 class="tw:text-xl tw:font-semibold tw:text-gray-800 tw:mb-2">Dashboard Analytics</h3>
+  <div :class="`q-pa-sm  `">
 
-        <p class="tw:text-gray-600 tw:mb-4 text-left">
-          แดชบอร์ดสำหรับวิเคราะห์ข้อมูลและแสดงผลแบบเรียลไทม์
+    <div
+      class="surface-0 project-card tw:bg-white tw:rounded-xl tw:shadow-lg tw:overflow-hidden card-hover tw:visible tw:h-full"
+      data-category="web">
+      <div :class="`bg-linear-violet  tw:w-full tw:flex tw:items-center tw:justify-center `">
+        <q-carousel class=" tw:w-full" height="300px" animated v-model="slide" :arrows="props.image.length > 1"
+          :navigation="props.image.length > 1" infinite>
+          <q-carousel-slide v-for="(v, i) in props.image" :name="i" :img-src="v" />
+        </q-carousel>
+      </div>
+      <div class="tw:p-6  tw:text-black tw:dark:text-white ">
+        <h3 class="tw:text-xl tw:font-semibold  tw:mb-2  text-left">{{ props.title }}</h3>
+
+        <p class=" tw:mb-4 text-left">
+          {{ props.content }}
         </p>
-        <div class="tw:flex tw:flex-wrap tw:gap-2 tw:mb-4">
-          <span class="tw:bg-blue-100 tw:text-blue-800 tw:px-3 tw:py-1 tw:rounded-full tw:text-xs"
-            >Vue.js</span
-          >
-          <span class="tw:bg-green-100 tw:text-green-800 tw:px-3 tw:py-1 tw:rounded-full tw:text-xs"
-            >Chart.js</span
-          >
+        <div class="tw:flex tw:flex-wrap tw:gap-2  tw:mb-4">
+          <span v-if="props.sw.includes('Vue')"
+            class="tw:bg-blue-100 tw:text-blue-800 tw:px-3 tw:py-1 tw:rounded-full tw:text-xs">Vue</span>
+          <span v-if="props.sw.includes('Quasar')"
+            class=" tw:bg-purple-100 tw:text-purple-800 tw:px-3 tw:py-1 tw:rounded-full tw:text-xs">Quasar</span>
+          <span v-if="props.sw.includes('OCR')"
+            class="tw:bg-orange-100 tw:text-orange-800 tw:px-3 tw:py-1 tw:rounded-full tw:text-xs">OCR</span>
+          <span v-if="props.sw.includes('Ai')"
+            class="tw:bg-red-100 tw:text-red-800 tw:px-3 tw:py-1 tw:rounded-full tw:text-xs">Ai</span>
+          <span v-if="props.sw.includes('POC')"
+            class="tw:bg-red-100 tw:text-red-800 tw:px-3 tw:py-1 tw:rounded-full tw:text-xs">POC</span>
         </div>
       </div>
     </div>
@@ -80,6 +93,16 @@ const randomGradientClasses = computed(() => {
 </template>
 
 <style>
+.bg-linear-violet {
+  background: linear-gradient(-45deg,
+      /* ทิศทางการไล่สี: จากบนลงล่าง (คุณอาจลอง 135deg สำหรับทแยงมุม) */
+      #5f2c82 0%,
+      /* สีม่วงเข้ม (Violet) เริ่มต้นที่ 0% */
+      #5076e0ff 100%
+      /* สีน้ำเงินอมเขียว (Teal/Aquamarine) สิ้นสุดที่ 100% */
+    );
+}
+
 .card-hover {
   transition: all 0.3s ease;
 }
@@ -108,6 +131,7 @@ const randomGradientClasses = computed(() => {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
