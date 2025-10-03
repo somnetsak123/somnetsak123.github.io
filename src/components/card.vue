@@ -1,6 +1,5 @@
 <script setup lang="ts">
-
-import { ref , computed } from 'vue'
+import { ref, computed } from 'vue'
 
 const gradientPairs = [
   // ☀️ ชุดสีโทนอุ่น/สว่าง (Warm/Bright Tones)
@@ -9,7 +8,7 @@ const gradientPairs = [
   ['from-amber-400', 'to-rose-500'], // อำพัน-กุหลาบ
   ['from-fuchsia-400', 'to-pink-500'], // ม่วงบานเย็น-ชมพู
   ['from-lime-300', 'to-yellow-400'], // มะนาว-เหลืองอ่อน
-  
+
   // 🌊 ชุดสีโทนเย็น/เข้ม (Cool/Deep Tones)
   ['from-blue-400', 'to-purple-500'], // ฟ้า-ม่วง (เดิม)
   ['from-green-400', 'to-teal-500'], // เขียว-เขียวน้ำทะเล (เดิม)
@@ -26,89 +25,96 @@ const gradientPairs = [
   ['from-orange-300', 'to-red-600'], // ส้มอ่อน-แดงเข้ม
   ['from-gray-300', 'to-slate-400'], // เทาอ่อน-เทาฟ้า
   ['from-purple-300', 'to-pink-400'], // ม่วงอ่อน-ชมพู
-  
+
   // 💎 เพิ่มเติมอีกเล็กน้อย
-  ['from-rose-500', 'to-red-700'], 
-  ['from-green-500', 'to-lime-600'], 
-  ['from-blue-600', 'to-cyan-400'], 
-];
+  ['from-rose-500', 'to-red-700'],
+  ['from-green-500', 'to-lime-600'],
+  ['from-blue-600', 'to-cyan-400'],
+]
 
 // 2. ฟังก์ชันสำหรับสุ่มเลือกคู่สี
 const getRandomGradient = () => {
-  const randomIndex = Math.floor(Math.random() * gradientPairs.length);
-  return gradientPairs[randomIndex];
-};
+  const randomIndex = Math.floor(Math.random() * gradientPairs.length)
+  return gradientPairs[randomIndex]
+}
 
 // 3. Computed property ที่รวมคลาส Tailwind CSS ทั้งหมด
 // และสุ่มเลือกคู่สีมาใช้
 const randomGradientClasses = computed(() => {
-  const [fromClass, toClass] = getRandomGradient();
-  
-  // นำคลาสพื้นฐานมารวมกับคลาสสีที่ถูกสุ่ม
-  return `tw:bg-gradient-to-br tw:${fromClass} tw:${toClass}`;
-});
+  const [fromClass, toClass] = getRandomGradient()
 
+  // นำคลาสพื้นฐานมารวมกับคลาสสีที่ถูกสุ่ม
+  return `tw:bg-gradient-to-br tw:${fromClass} tw:${toClass}`
+})
 </script>
 
 <template>
-    <div class="q-pa-sm">
+  <div class="q-pa-sm">
+    <div
+      class="project-card tw:bg-white tw:rounded-xl tw:shadow-lg tw:overflow-hidden card-hover tw:visible"
+      data-category="web"
+    >
+      <div
+        :class="randomGradientClasses"
+        class="tw:h-48 tw:flex tw:items-center tw:justify-center tw:text-white tw:text-6xl"
+      >
+        📊
+      </div>
+      <div class="tw:p-6 tex">
+        <h3 class="tw:text-xl tw:font-semibold tw:text-gray-800 tw:mb-2">Dashboard Analytics</h3>
 
-<div class="project-card tw:bg-white tw:rounded-xl tw:shadow-lg tw:overflow-hidden card-hover tw:visible" data-category="web">
-                    <div :class="randomGradientClasses" class=" tw:h-48 tw:flex tw:items-center tw:justify-center tw:text-white tw:text-6xl">
-                        📊
-                    </div>
-                    <div class="tw:p-6 tex">
-                        <h3 class="tw:text-xl tw:font-semibold tw:text-gray-800 tw:mb-2">Dashboard Analytics</h3>
-                        
-                        <p class="tw:text-gray-600 tw:mb-4 text-left">แดชบอร์ดสำหรับวิเคราะห์ข้อมูลและแสดงผลแบบเรียลไทม์</p>
-                        <div class="tw:flex tw:flex-wrap tw:gap-2 tw:mb-4">
-                            <span class="tw:bg-blue-100 tw:text-blue-800 tw:px-3 tw:py-1 tw:rounded-full tw:text-xs">Vue.js</span>
-                            <span class="tw:bg-green-100 tw:text-green-800 tw:px-3 tw:py-1 tw:rounded-full tw:text-xs">Chart.js</span>
-                        </div>
-             
-                    </div>
-                </div>
-
+        <p class="tw:text-gray-600 tw:mb-4 text-left">
+          แดชบอร์ดสำหรับวิเคราะห์ข้อมูลและแสดงผลแบบเรียลไทม์
+        </p>
+        <div class="tw:flex tw:flex-wrap tw:gap-2 tw:mb-4">
+          <span class="tw:bg-blue-100 tw:text-blue-800 tw:px-3 tw:py-1 tw:rounded-full tw:text-xs"
+            >Vue.js</span
+          >
+          <span class="tw:bg-green-100 tw:text-green-800 tw:px-3 tw:py-1 tw:rounded-full tw:text-xs"
+            >Chart.js</span
+          >
+        </div>
+      </div>
     </div>
-       </template>
+  </div>
+</template>
 
 <style>
-   .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
+.card-hover {
+  transition: all 0.3s ease;
+}
 
-     .project-card {
-            transition: all 0.3s ease;
-        }
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
 
-        .project-card.hidden {
-            opacity: 0;
-            transform: translateY(20px);
-        }
+.project-card {
+  transition: all 0.3s ease;
+}
 
-        .project-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+.project-card.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
 
-    @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .fade-in-up {
-            animation: fadeInUp 0.6s ease-out;
-        }
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
 </style>
-
