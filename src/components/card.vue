@@ -50,7 +50,7 @@ const getRandomGradient = () => {
 // 3. Computed property ที่รวมคลาส Tailwind CSS ทั้งหมด
 // และสุ่มเลือกคู่สีมาใช้
 const randomGradientClasses = computed(() => {
-  const [fromClass, toClass] = getRandomGradient()
+  const [fromClass, toClass] = getRandomGradient() || []
 
   // นำคลาสพื้นฐานมารวมกับคลาสสีที่ถูกสุ่ม
   return `tw:bg-gradient-to-br tw:${fromClass} tw:${toClass}`

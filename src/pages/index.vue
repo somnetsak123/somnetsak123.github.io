@@ -7,7 +7,7 @@ import { ref } from 'vue'
 const btnToggle = ref<string>('1')
 
 const listCard = ref<{
-  image: String[], title: String, content: String, sw: String[], type: Number
+  image: string[], title: string, content: string, sw: string[], type: Number
 }[]>([
   {
     image: ['/image/jws/jws.jpg', '/image/jws/page.jpg'], title: 'Enterprise Document Management (EDM)',
