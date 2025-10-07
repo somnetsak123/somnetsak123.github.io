@@ -8,6 +8,7 @@ const btnToggle = ref<string>('1')
 
 const listCard = ref<
   {
+    link?: string
     image: string[]
     title: string
     content: string
@@ -16,6 +17,7 @@ const listCard = ref<
   }[]
 >([
   {
+    link: 'https://edm.frappet.synology.me/',
     image: ['/image/jws/jws.jpg', '/image/jws/page.jpg'],
     title: 'Enterprise Document Management (EDM)',
     content:
@@ -68,6 +70,20 @@ const listCard = ref<
     sw: [],
     type: 3,
   },
+  {
+    image: ['/image/certificate/cer-1.jpg'],
+    title: 'เกียรติบัตรผ่านการฝึกงาน  CAT',
+    content: '',
+    sw: [],
+    type: 3,
+  },
+  {
+    image: ['/image/certificate/cer-2.jpg'],
+    title: 'เกียรติบัตรคนดีศรีเชียงใหม่',
+    content: '',
+    sw: [],
+    type: 3,
+  },
 ])
 </script>
 
@@ -110,7 +126,7 @@ const listCard = ref<
     <h3 class="tw:font-bold q-mt-auto">เกี่ยวกับฉัน</h3>
     <div :class="`tw:flex tw:flex-col tw:gap-4 `">
       <div class="tw:grid tw:justify-items-center">
-        <q-btn round class="bg-linear-violet">
+        <q-btn round class="bg-linear-violet" href="pdf/Portfolio-1.pdf" target="_blank">
           <q-avatar size="100px">🎨 </q-avatar>
         </q-btn>
       </div>
@@ -118,7 +134,7 @@ const listCard = ref<
         <h4 class="tw:text-2xl tw:font-semibold q-mb-md">นักสร้างสรรค์ดิจิทัล</h4>
         <p class="tw:leading-relaxed tw:indent-8">
           สวัสดีครับ! ผม เน็ต (ธนพนธ์ แสงจันทร์) ตอนนี้อายุ 24 ปีครับ ผมจบปริญญาตรีด้าน
-          วิศวกรรมคอมพิวเตอร์ จาก มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ด้วยเกรด 3.61
+          วิศวกรรมคอมพิวเตอร์ จาก มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ด้วยเกรด 3.62
         </p>
         <p class="tw:leading-relaxed tw:indent-8">
           และตอนนี้ก็ทำงานที่ บริษัท คาโม มายล์ จำกัด ซึ่งผมได้ทำทั้งส่วน Front-end และงาน Back-end
@@ -171,8 +187,8 @@ const listCard = ref<
           size="1rem"
           :options="[
             { label: 'ทั้งหมด', value: '1' },
-            { label: 'เว็บไซต์', value: '2' },
             { label: 'อบรม', value: '3' },
+            { label: 'เว็บไซต์', value: '2' },
           ]"
         />
       </div>
@@ -189,6 +205,7 @@ const listCard = ref<
 
           return false
         })"
+        :link="v.link"
         :image="v.image"
         :title="v.title"
         :content="v.content"
