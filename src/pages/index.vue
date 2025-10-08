@@ -26,6 +26,7 @@ const listCard = ref<
     type: 2,
   },
   {
+    link: 'https://job-tracking.case-collection.com/',
     image: [],
     title: 'Job Worker Service (JWS)',
     content:
