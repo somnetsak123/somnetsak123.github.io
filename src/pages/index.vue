@@ -27,7 +27,7 @@ const listCard = ref<
   },
   {
     link: 'https://job-tracking.case-collection.com/',
-    image: [],
+    image: ['/image/jws/1.png', '/image/jws/2.png'],
     title: 'Job Worker Service (JWS)',
     content:
       'เป็นระบบการจัดการข้อมูลเพื่อไว้ใช้สำหรับการทำรายการ ในการติดตามกระบวนการต่างๆ ในการนำเข้าแรงงาน',
@@ -42,8 +42,8 @@ const listCard = ref<
     type: 2,
   },
   {
-    link: 'https://test-hrms-renew.case-collection.com/',
-    image: ['/image/hrms/image.jpeg'],
+    link: 'https://hrms-renew.case-collection.com/',
+    image: ['/image/hrms/image.jpeg', '/image/hrms/3.png'],
     title: 'HRMS',
     content:
       'เป็นระบบจัดการบุคคลภายใน เช่นการลา วินัย ออกคำสั่ง  โครงสร้างหน่วยงาน มีการทำ STT แล้วเอา Ai มาทำเป็นมาแปลงเป็น schema ในการส่ง api ',
