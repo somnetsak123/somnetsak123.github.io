@@ -42,6 +42,7 @@ const listCard = ref<
     type: 2,
   },
   {
+    link: 'https://test-hrms-renew.case-collection.com/',
     image: ['/image/hrms/image.jpeg'],
     title: 'HRMS',
     content:
